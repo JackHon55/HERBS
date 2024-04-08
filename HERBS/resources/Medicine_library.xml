@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<library>
+  <stacksize>7</stacksize>
+  <medicines>
+    <type>Painkiller</type>
+    <info>While under the effects of a Painkiller, you suffer no penalties from disease or lingering injuriues, and can partially supress exhaustion, additionally when you reach 0 hit points, you do not fall unconscious, you still make death saving throws at the end of your turn, but can keep fighting until you die. However you can choose to go unconscious at any point.^Painkillers have a duration of 8 hours, regardless of the potency.</info>
+    <effect>Low - Suppress 1 level of Exhaustion^Medium - Suppress 2 levels of Exhaustion^High - Suppress 4 levels of Exhaustion^VeryHigh - Suppress 6 levels of Exhaustion</effect>
+  </medicines>
+
+  <medicines>
+    <type>Replenisher</type>
+    <info>Replenishers slowly removes one level of exhaustion, and can cure a creature of a sickness that is afflicting them.</info>
+    <effect>Low - Removes Exhaustion and sickness in 24 hours^Medium - Removes Exhaustion and sickness in 8 hours^High - Removes Exhaustion and sickness in 4 hours^VeryHigh - Removes Exhaustion and sickness in 1 hour</effect>
+  </medicines>
+
+  <medicines>
+    <type>Healer</type>
+    <info>Healers allow a creature to restore hit die upon consuming them. The amount of hit die restored depends on the potency of the Healer.^For the purposes of overdosing, you are considered under the effect of a healer until the end of your next short rest in which you spend at least 1 hit die.</info>
+    <effect>Low - Restores 1 hit dice^Medium - Restores 2 hit die^High - Restores 3 hit die^VeryHigh - Restores 5 hit die</effect>
+  </medicines>
+
+  <medicines>
+    <type>Vigour</type>
+    <info>When a creature consumes a Vigour, they heal a lingering injury severity up to a certain dice roll, depending on the potency of the Vigour. This healing process takes 8 hours. This time does not need to be spent resting.</info>
+    <effect>Low - Heals 17+ Injury^Medium - Heals 11+ Injury^High - Heals 5+ Injury^VeryHigh - Heals 2+ Injury</effect>
+  </medicines>
+
+  <medicines>
+    <type>Defender</type>
+    <info>When you consume a Defender, whenever you have to make a Saving Throw up to 1-hour after consuming the Defender, you may choose to gain advantage on the roll. You can do this an amount of times determined by the potency of the dose.^This bonus does cannot apply to death saving throws.</info>
+    <effect>Low - Used for 1 Saving Throw^Medium - Used for 2 Saving Throws^High - Used for 3 Saving Throws^VeryHigh - Used for 5 Saving Throws</effect>
+  </medicines>
+</library>

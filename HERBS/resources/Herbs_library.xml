@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<library>
+  <type>Painkiller,Replenisher,Healer,Vigour,Defender</type>
+  <level>Low,Medium,High,Very High</level>
+  <steps>
+    <potency>Low</potency>
+    <formula>Low|4,Medium|12,High|36</formula>
+  </steps>
+
+  <steps>
+    <potency>Medium</potency>
+    <formula>Low|2,Medium|4,High|12,Very High|36</formula>
+  </steps>
+
+  <steps>
+    <potency>High</potency>
+    <formula>Medium|2,High|4,Very High|12</formula>
+  </steps>
+  
+  <steps>
+    <potency>Very High</potency>
+    <formula>High|2,Very High|4</formula>
+  </steps>
+    
+  <herb>
+    <name>Spearmint</name>
+    <medtype>Defender,Painkiller</medtype>
+    <potency>Low</potency>
+  </herb>
+
+  <herb>
+    <name>Coriander</name>
+    <medtype>Healer,Painkiller</medtype>
+    <potency>Low</potency>
+  </herb>
+
+  <herb>
+    <name>Rose</name>
+    <medtype>Healer,Painkiller</medtype>
+    <potency>Low</potency>
+  </herb>
+
+  <herb>
+    <name>Henbane</name>
+    <medtype>Healer,Replenisher</medtype>
+    <potency>Low</potency>
+  </herb>
+
+  <herb>
+    <name>Liquorice</name>
+    <medtype>Vigour</medtype>
+    <potency>Medium</potency>
+  </herb>
+
+  <herb>
+    <name>Myrrh</name>
+    <medtype>Defender</medtype>
+    <potency>Medium</potency>
+  </herb>
+
+  <herb>
+    <name>Lavendar</name>
+    <medtype>Healer,Painkiller</medtype>
+    <potency>Medium</potency>
+  </herb>
+
+  <herb>
+    <name>Balm</name>
+    <medtype>Painkiller</medtype>
+    <potency>Medium</potency>
+  </herb>
+
+  <herb>
+    <name>Hemlock</name>
+    <medtype>Replenisher</medtype>
+    <potency>High</potency>
+  </herb>
+  
+  <herb>
+    <name>Comfrey</name>
+    <medtype>Vigour</medtype>
+    <potency>High</potency>
+  </herb>
+
+  <herb>
+    <name>Wormwood</name>
+    <medtype>Vigour</medtype>
+    <potency>High</potency>
+  </herb>
+
+  <herb>
+    <name>Calendula</name>
+    <medtype>Defender</medtype>
+    <potency>High</potency>
+  </herb>
+
+  <herb>
+    <name>Sage</name>
+    <medtype>Healer,Vigour</medtype>
+    <potency>Very High</potency>
+  </herb>
+
+  <herb>
+    <name>Chamomile</name>
+    <medtype>Healer,Replenisher</medtype>
+    <potency>Very High</potency>
+  </herb>
+</library>
