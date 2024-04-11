@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <library>
-  <stacksize>7</stacksize>
+  <stacksize>10</stacksize>
   <medicines>
     <type>Painkiller</type>
     <info>While under the effects of a Painkiller, you suffer no penalties from disease or lingering injuriues, and can partially supress exhaustion, additionally when you reach 0 hit points, you do not fall unconscious, you still make death saving throws at the end of your turn, but can keep fighting until you die. However you can choose to go unconscious at any point.^Painkillers have a duration of 8 hours, regardless of the potency.</info>

@@ -39,4 +39,19 @@
         Public info As String
         Public effect As String
     End Class
+
+    Public Class Medicine_box
+        Public current_medicines As New Dictionary(Of String, Integer)
+
+        Public ReadOnly Property RemainingSlots As Integer
+            Get
+                Dim xcount = 0
+                For Each xmed In current_medicines
+                    xcount += xmed.Value
+                Next
+                Return HERBS.Medicine_stacksize - xcount
+            End Get
+        End Property
+
+    End Class
 End Class

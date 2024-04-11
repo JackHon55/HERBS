@@ -17,10 +17,11 @@ Public Class HERBS
     Public Crafting_labels As New List(Of Label)
     Public Crafting_vals As New List(Of NumericUpDown)
     Public Crafting_levels As New List(Of Button)
-    Public Crafted_Medicine_List As New Dictionary(Of String, Integer)
+    Public Crafted_Medicine_box As New List(Of Classlib.Medicine_box)
     Public Medicine_stacksize As Integer = 0
     Public Shared Currently_crafting As String = ""
     Public save_file As String = ""
+    Public LastExistingBox As Integer = 0
 
     Private Sub HERBS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim args As String() = Environment.GetCommandLineArgs()
@@ -39,6 +40,9 @@ Public Class HERBS
                 line = reader.ReadLine()
                 If line.StartsWith("HERBS") Then
                     xcontent = line.Split("|")(1)
+                End If
+                If line.StartsWith("Medicine Box") Then
+                    LastExistingBox += 1
                 End If
             End While
         End Using
@@ -60,6 +64,7 @@ Public Class HERBS
         PossibleMedicine_to_TabCounter()
         PossibleMedicine_to_PageButtonCounter()
         Initialisations.Medicine_Initialisation()
+        Crafted_Medicine_box.Add(New Classlib.Medicine_box)
     End Sub
 
     Public Function Possible_Recipe_Calculator(Type_list As Dictionary(Of String, Classlib.HerbstoragebyType))
@@ -227,11 +232,20 @@ Public Class HERBS
             End If
         Next
 
-        If Crafted_Medicine_List.Keys.Contains(medicine_to_craft) Then
-            Crafted_Medicine_List(medicine_to_craft) += 1
-        Else
-            Crafted_Medicine_List.Add(medicine_to_craft, 1)
-        End If
+        Dim number_to_craft = sender.Tag
+        sender.Tag = 0
+
+        For i As Integer = 1 To number_to_craft
+            If Crafted_Medicine_box(Crafted_Medicine_box.Count - 1).RemainingSlots = 0 Then
+                Crafted_Medicine_box.Add(New Classlib.Medicine_box)
+            End If
+
+            If Crafted_Medicine_box(Crafted_Medicine_box.Count - 1).current_medicines.Keys.Contains(medicine_to_craft) Then
+                Crafted_Medicine_box(Crafted_Medicine_box.Count - 1).current_medicines(medicine_to_craft) += 1
+            Else
+                Crafted_Medicine_box(Crafted_Medicine_box.Count - 1).current_medicines.Add(medicine_to_craft, 1)
+            End If
+        Next
 
         Dim xtemp1 As New Dictionary(Of String, Integer)(Temp_Herbs)
         Dim xtemp2 As New Dictionary(Of String, Classlib.HerbstoragebyType)(Temp_Types)
@@ -264,12 +278,16 @@ Public Class HERBS
 
 
         CraftedMedicine_List.Items.Clear()
-        For Each xobj In Crafted_Medicine_List
-            If xobj.Key <> "" Then
-                CraftedMedicine_List.Items.Add($"{xobj.Value}x {xobj.Key}")
-            End If
+        Dim box_count = 0
+        For Each xobj In Crafted_Medicine_box
+            box_count += 1
+            CraftedMedicine_List.Items.Add($"Medicine Box({box_count})")
+            For Each xlist In xobj.current_medicines
+                CraftedMedicine_List.Items.Add($"{xlist.Value}x {xlist.Key}")
+            Next
         Next
         sender.Enabled = False
+        sender.Text = "Craft!"
     End Sub
 
     Private Sub CraftConfirm_button_MouseEnter(sender As Button, e As EventArgs) Handles CraftConfirm_button.MouseEnter
@@ -364,39 +382,30 @@ Public Class HERBS
             End If
         Next
         Dim reqherb = HerbSelect_label.Tag
-        If sumherb = reqherb Then
+        If sumherb = reqherb OrElse sumherb Mod reqherb = 0 Then
             CraftConfirm_button.Enabled = True
+            CraftConfirm_button.Text = $"Craft x{sumherb / reqherb}!"
+            CraftConfirm_button.Tag = sumherb / reqherb
         Else
             CraftConfirm_button.Enabled = False
+            CraftConfirm_button.Text = $"Craft!"
+            CraftConfirm_button.Tag = 0
         End If
     End Sub
 
-
-    Public Function CraftedMedicine_to_Vortex(xtype As String)
-        Dim craftedtypes As New List(Of String)
-        Dim xcount = 0
-        Dim xlist As New List(Of String)
-        For Each xmedicine In Crafted_Medicine_List
-            If xmedicine.Key.Contains(xtype) Then
-                xcount += xmedicine.Value
-                xlist.Add($"{xmedicine.Value}x {xmedicine.Key.Replace($" {xtype}", "")}")
-            End If
+    Public Function MedicineBoxes_to_Vortex()
+        Dim finallist As New List(Of String)
+        Dim box_count = LastExistingBox
+        For Each xbox In Crafted_Medicine_box
+            box_count += 1
+            Dim slottext As New List(Of String)
+            For Each xmedicine In xbox.current_medicines
+                slottext.Add($"{xmedicine.Value}x {xmedicine.Key}")
+            Next
+            finallist.Add($"Medicine Box({box_count}):|{String.Join("^", slottext)}|-32640")
         Next
-        Dim xx = Medicine_library(xtype)
-        Dim infoblurt = $"{xx.info}^{xx.effect}"
-        If xcount >= 1 And xcount <= Medicine_stacksize Then
-            craftedtypes.Add($"{xtype}_1 ({xcount}):{String.Join(",", xlist)}|{infoblurt}|-32640")
-        ElseIf xcount > Medicine_stacksize Then
-            Dim i As Integer = 1
-            While xcount > Medicine_stacksize
-                craftedtypes.Add($"{xtype}_{i} ({Math.Min(xcount, Medicine_stacksize)}):{String.Join(",", xlist)}|{infoblurt}|-32640")
-                i += 1
-                xcount -= Medicine_stacksize
-            End While
-            craftedtypes.Add($"{xtype}_{i} ({xcount}):{String.Join(",", xlist)}|{infoblurt}|-32640")
-        End If
-        Return craftedtypes
 
+        Return finallist
     End Function
 
     Private Sub CloseHERBS_button_Click(sender As Object, e As EventArgs) Handles CloseHERBS_button.Click
@@ -430,11 +439,9 @@ Public Class HERBS
 
         Dim newmedicine_count = 0
         Dim newmedicines_forVortex As New List(Of String)
-        For Each xtype In Medicine_type
-            Dim newlist = CraftedMedicine_to_Vortex(xtype)
-            newmedicines_forVortex.AddRange(newlist)
-            newmedicine_count += newlist.Count
-        Next
+        Dim newlist = MedicineBoxes_to_Vortex()
+        newmedicines_forVortex.AddRange(newlist)
+        newmedicine_count += newlist.Count
 
         Dim updated_lines As New List(Of String)
         For Each xline In filelines

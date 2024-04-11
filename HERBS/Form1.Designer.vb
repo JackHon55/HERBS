@@ -23,6 +23,8 @@ Partial Class HERBS
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.BrewingTabs = New System.Windows.Forms.TabControl()
         Me.HerbList = New System.Windows.Forms.ListView()
         Me.HerbList_herbs = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -42,8 +44,6 @@ Partial Class HERBS
         Me.CraftConfirm_button = New System.Windows.Forms.Button()
         Me.CraftedMedicine_List = New System.Windows.Forms.ListBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.CloseHERBS_button = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.CraftingPanel.SuspendLayout()
@@ -78,6 +78,30 @@ Partial Class HERBS
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.25939!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(859, 590)
         Me.TableLayoutPanel1.TabIndex = 0
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(620, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(236, 31)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "Crafted Medicine"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(308, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(306, 31)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Medicine and Availability"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'BrewingTabs
         '
@@ -238,9 +262,9 @@ Partial Class HERBS
         '
         Me.CraftConfirm_button.Enabled = False
         Me.CraftConfirm_button.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CraftConfirm_button.Location = New System.Drawing.Point(118, 27)
+        Me.CraftConfirm_button.Location = New System.Drawing.Point(104, 27)
         Me.CraftConfirm_button.Name = "CraftConfirm_button"
-        Me.CraftConfirm_button.Size = New System.Drawing.Size(75, 34)
+        Me.CraftConfirm_button.Size = New System.Drawing.Size(100, 34)
         Me.CraftConfirm_button.TabIndex = 0
         Me.CraftConfirm_button.Text = "Craft!"
         Me.CraftConfirm_button.UseVisualStyleBackColor = True
@@ -267,30 +291,6 @@ Partial Class HERBS
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Herb Inventory"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(308, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(306, 31)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Medicine and Availability"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(620, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(236, 31)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Crafted Medicine"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'CloseHERBS_button
         '
