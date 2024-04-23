@@ -21,17 +21,43 @@ Public Class Initialisations
             HERBS.Medicine_steps.Add(xpotency, tempdict)
         Next
 
+        Dim proxyx = 6
         For Each xtype In HERBS.Medicine_type
             Dim xtab As New TabPage With {.Name = xtype & "_page", .Text = xtype & " (0)"}
+            Dim xbutt As New Button With {
+                .Text = $"    {xtype}{vbCrLf}    (0)",
+                .Name = xtype & "_pagebutton",
+                .Font = New Font("Microsoft Sans Serif", 10),
+                .FlatStyle = FlatStyle.Flat,
+                .BackColor = Color.Transparent,
+                .ForeColor = Color.White,
+                .Tag = xtab,
+                .Width = 125,
+                .Height = 45,
+                .Location = New Point(0, proxyx),
+                .BackgroundImage = My.Resources.vial_empty,
+                .BackgroundImageLayout = ImageLayout.Stretch
+            }
+            xbutt.FlatAppearance.BorderSize = 0
+            xbutt.FlatAppearance.MouseDownBackColor = Color.Transparent
+            xbutt.FlatAppearance.MouseOverBackColor = Color.Transparent
+            xtab.BackgroundImage = My.Resources.Table_Rectangle_Wood_Ashen_J_2x1
+            xtab.BackgroundImageLayout = ImageLayout.Stretch
             HERBS.BrewingTabs.TabPages.Add(xtab)
+            HERBS.ProxyTabButtons_Panel.Controls.Add(xbutt)
+            proxyx += 46
 
-            Dim xc = 55
-            Dim yc = 20
+            AddHandler xbutt.Click, AddressOf HERBS.ProxyTabButtonClick
+            AddHandler xbutt.MouseEnter, AddressOf HERBS.ProxyTabButtonChange
+            AddHandler xbutt.MouseLeave, AddressOf HERBS.ProxyTabButtonReset
+
+            Dim xc = 45
+            Dim yc = 35
 
             For Each xlevel In HERBS.Medicine_level
                 HERBS.Current_Types.Add(xlevel & "_" & xtype, New Classlib.HerbstoragebyType)
                 BrewingPage_Buttons(xtab, xtype, xlevel, xc, yc)
-                yc += 27
+                yc += 45
             Next
         Next
 
@@ -48,9 +74,15 @@ Public Class Initialisations
         HERBS.Crafting_vals.Add(HERBS.CraftingPanel_Herbval1)
         HERBS.Crafting_vals.Add(HERBS.CraftingPanel_Herbval2)
         HERBS.Crafting_vals.Add(HERBS.CraftingPanel_Herbval3)
+        HERBS.CraftingPanel_Herbval1.Tag = HERBS.HerbIcon_fixed1
+        HERBS.CraftingPanel_Herbval2.Tag = HERBS.HerbIcon_fixed2
+        HERBS.CraftingPanel_Herbval3.Tag = HERBS.HerbIcon_fixed3
+        HERBS.HerbIcon_fixed1.Tag = HERBS.HerbIcon_animated1
+        HERBS.HerbIcon_fixed2.Tag = HERBS.HerbIcon_animated2
+        HERBS.HerbIcon_fixed3.Tag = HERBS.HerbIcon_animated3
 
-        Dim yy = 20
-        Dim xy = 25
+        Dim yy = 35
+        Dim xy = 33
         For Each xlevel In HERBS.Medicine_level
             Dim craftinglevel As New Button With {
                 .Text = $"{xlevel.Substring(0, 1)}",
@@ -63,12 +95,7 @@ Public Class Initialisations
             HERBS.CraftingPanel.Controls.Add(craftinglevel)
             HERBS.Crafting_levels.Add(craftinglevel)
             AddHandler craftinglevel.Click, AddressOf HERBS.CraftingLevel_to_HerbSelect
-            If yy > 30 Then
-                yy = 20
-                xy += 32
-            Else
-                yy += 30
-            End If
+            yy += 32
         Next
     End Sub
 
@@ -102,7 +129,8 @@ Public Class Initialisations
         Dim newbutton As New Button With {
             .Text = $"{xlevel} {xtype}",
             .Name = $"{xlevel}_{xtype}_button",
-            .Size = New Size(220, 25),
+            .Size = New Size(180, 35),
+            .Font = New Font("Microsoft Sans Serif", 9),
             .Location = New Point(xc, yc)
         }
         xtab.Controls.Add(newbutton)

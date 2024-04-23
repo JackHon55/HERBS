@@ -47,15 +47,19 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -70,6 +74,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animations.vb" />
     <Compile Include="Classlib.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
@@ -118,9 +123,27 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\vialc.png" />
+    <None Include="resources\vialc_empty.png" />
+    <None Include="resources\vial_emptygreen.png" />
+    <None Include="resources\vial_empty.png" />
+    <None Include="resources\vial.png" />
+    <None Include="resources\mortarpestle2.png" />
+    <None Include="resources\mortarpestle1.png" />
+    <None Include="resources\woodtabs.png" />
+    <None Include="resources\Table_Rectangle_Wood_Ashen_J_2x1.png" />
+    <None Include="resources\HERBS_Cauldron.png" />
+    <None Include="resources\Firewood_Wood_Ashen_E_1x1.png" />
+    <None Include="resources\ForestPathVol6Public.jpg" />
+    <None Include="resources\ForestBackDrop_Controls.jpg" />
+    <None Include="resources\Dice_blue_big.png" />
+    <None Include="resources\Dice_blue_small.png" />
+    <None Include="resources\Dice_red_big.png" />
+    <None Include="resources\Dice_red_small.png" />
     <Content Include="resources\Herbs_library.xml">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="resources\Map_Blank_A_2x1.png" />
     <Content Include="resources\Medicine_library.xml">
       <SubType>Designer</SubType>
     </Content>

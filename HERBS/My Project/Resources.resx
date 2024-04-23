@@ -118,10 +118,61 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ForestBackDrop_Controls" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ForestBackDrop_Controls.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ForestPathVol6Public" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ForestPathVol6Public.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HERBS_Cauldron" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\HERBS_Cauldron.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Herbs_library" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\Herbs_library.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Map_Blank_A_2x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Map_Blank_A_2x1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Medicine_library" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\Medicine_library.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="mortarpestle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\mortarpestle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mortarpestle2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\mortarpestle2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Table_Rectangle_Wood_Ashen_J_2x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Table_Rectangle_Wood_Ashen_J_2x1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="woodtabs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\woodtabs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\vial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vialc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\vialc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vialc_empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\vialc_empty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vial_empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\vial_empty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vial_emptygreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\vial_emptygreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dice_blue_big" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Dice_blue_big.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dice_blue_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Dice_blue_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dice_red_big" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Dice_red_big.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dice_red_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\Dice_red_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
